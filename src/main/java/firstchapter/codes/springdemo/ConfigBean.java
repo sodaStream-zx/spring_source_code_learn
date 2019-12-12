@@ -1,4 +1,4 @@
-package firstchapter.codes;
+package firstchapter.codes.springdemo;
 
 import firstchapter.codes.entity.MyUser;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
