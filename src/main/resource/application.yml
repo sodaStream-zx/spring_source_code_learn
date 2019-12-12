@@ -1,0 +1,5 @@
+server:
+  port: 9700
+spring:
+  application:
+    name: code-learn

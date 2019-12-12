@@ -1,4 +1,4 @@
-package firstchapter;
+package firstchapter.codes;
 
 /**
  * @author 一杯咖啡
