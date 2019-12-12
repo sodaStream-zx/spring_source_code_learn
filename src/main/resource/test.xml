@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="firstChapter.codes.entity.MyUser" id="test" name="uName">
+    <bean class="firstchapter.codes.entity.MyUser" id="test" name="uName">
         <property name="uName" value="uName"/>
         <property name="uAge" value="12"/>
         <property name="uPwd" value="1234"/>

@@ -1,4 +1,4 @@
-package firstChapter.codes.entity;
+package firstchapter.codes.entity;
 
 /**
  * @author zxx

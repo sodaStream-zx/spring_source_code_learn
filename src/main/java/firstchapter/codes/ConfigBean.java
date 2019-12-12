@@ -1,6 +1,6 @@
-package firstChapter.codes;
+package firstchapter.codes;
 
-import firstChapter.codes.entity.MyUser;
+import firstchapter.codes.entity.MyUser;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
