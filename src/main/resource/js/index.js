@@ -3,9 +3,7 @@ function test() {
     console.info("hello js");
 }
 
-function loadXMLDoc() {
-    var theUrl = document.getElementById("url").value;
-    var theMethod = document.getElementById("method").value;
+function getAjax() {
     var xmlhttp;
     if (window.XMLHttpRequest) {
         //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -14,13 +12,26 @@ function loadXMLDoc() {
         // IE6, IE5 浏览器执行代码
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var responseText = xmlhttp.responseText;
+    return xmlhttp;
+}
+
+function loadXMLDoc() {
+    var theUrl = document.getElementById("url").value;
+    var theMethod = document.getElementById("method").value;
+    var ajax = getAjax();
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState === 4 && ajax.status === 200) {
+            var responseText = ajax.responseText;
             var elementById = document.getElementById("thepage");
-            elementById.innerText = responseText;
+            var parse = JSON.parse(responseText);
+            var counter = parse.data.counter;
+            var str = '';
+            for (var x in counter) {
+                str = str + x + ":" + counter[x] + "\n";
+            }
+            elementById.innerText = str;
         }
     };
-    xmlhttp.open(theMethod, theUrl, true);
-    xmlhttp.send();
+    ajax.open(theMethod, theUrl, true);
+    ajax.send();
 }
